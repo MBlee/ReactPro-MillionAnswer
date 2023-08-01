@@ -1,25 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import { connect } from 'react-redux'
+import { useEffect, useState,createContext } from 'react'
+import axios from 'axios'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import IndexRoute from './router'
+import {BrowserRouter as Router,Route,Link,Switch} from 'react-router-dom'
+
+import {scoreContext} from './store/context'
+
+function App(props) {
+	const [score, setScore] = useState(0)
+    return (
+    	<scoreContext.Provider value={{score:0}}>
+	        <div className="App"> 
+	        	<IndexRoute />
+	        </div>
+        </scoreContext.Provider>
+    );
 }
 
-export default App;
+export default connect(res => res)(App);

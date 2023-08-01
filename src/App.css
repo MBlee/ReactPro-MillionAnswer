@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    outline: none;
+    text-decoration: none;
+    user-select: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+	max-width: 410px;
+	margin: 0 auto;
+}
+.BackHome{
+	color: hotpink;
+	font-size: 20px;
+	text-align: center;
+}
+.IndexPage{
+	display: grid;
+	place-content: center stretch;
+}
+.IndexPage .route-link{
+	background-color: deepskyblue;
+	padding: 10px;
+	margin: 10px 0;
+	border-radius: 10px;
+	color: white;
+	text-align: center;
+}
+.ScorePage{
+	display: grid;
+	place-content:start center;
+	text-align: center;
+	grid-gap: 10px 0; 
+	height: 100vh;
+	padding-top:100px;
+	border:1px solid gainsboro; 
+}
+.ScorePage h2{
+	font-size: 80px;
+	color: skyblue;
+}
+.ScorePage p{
+	font-size: 36px;
+	color: dimgray;
+}
+.box{
+	border: 1px solid gainsboro;
+	padding: 10px;
+	margin: 20px 0;
+}
+.question{
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+.question::after{
+	content: ' ?'
+}
+.option{
+	padding: 10px 10px;
+	border-radius: 10px;
+	background-color: skyblue;
+	margin: 10px 0;
+	color: white;
+	display: grid;
+	grid-template-columns: auto 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.option.correct{
+	background-color: seagreen;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.option.error{
+	background-color: darkred;
 }
-
-.App-link {
-  color: #61dafb;
+.option.correct:after{
+	content: '√';
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.option.error:after{
+	content: '×';
 }
